@@ -32,8 +32,6 @@
             </span>
         </h2>
     </div>
-    <div wicket:id="statsPanelSlow" class="statsPanelSlow"></div>
-
     <div class="takeAttendanceContainer">
         <div class="takeAttendanceHeader">
             <h3 class="takeAttendanceHeader">
@@ -49,17 +47,20 @@
             <span wicket:id="group-choice-label" /> <select wicket:id="group-choice" />
         </form>
 
-        <table id="takeAttendanceTable" class="takeAttendanceTable">
+        <table id="takeAttendanceTable" class="table table-striped table-bordered">
             <thead>
             <tr class="div-table-row">
-                <th class="takeAttendancePhotoHeader">
+                <th>
                     <span wicket:id="student-photo" />
                 </th>
-                <th class="takeAttendanceNameHeader">
+                <th class="col-sm-5">
                     <span wicket:id="student-name" />
                 </th>
-                <th class="takeAttendanceStatusCol">
-                    <span wicket:id="record-header"/>
+                <th class="row">
+                    <span wicket:id="status-names">
+                        <label class="col-sm-2 status-label-centered" wicket:id="header-status-name" />
+                    </span>
+                    <label class="col-sm-2 status-label-centered">Comments</label>
                 </th>
             </tr>
             </thead>
@@ -93,7 +94,7 @@
             });
         </script>
     </div>
-
+    <div wicket:id="statsPanelSlow" class="statsPanelSlow"></div>
     <div id="printContainer" class="printContainer" wicket:id="print-container">
         <span wicket:id="print-panel"/>
     </div>

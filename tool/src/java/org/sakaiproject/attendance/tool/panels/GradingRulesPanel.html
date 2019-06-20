@@ -47,33 +47,33 @@
             <em><wicket:message key="attendance.settings.grading.rules.example" /></em>
         </div>
         <form wicket:id="grading-rule-add-form" class="addRuleForm">
-            <div>
+            <span>
                 <label>
                     <wicket:message key="attendance.settings.grading.status.label"/> <br />
                     <select wicket:id="status"></select>
                 </label>
-            </div>
-            <div>
+            </span>
+            <span>
                 <label>
                     <wicket:message key="attendance.settings.grading.after.label"/> <br />
                     <input type="text" wicket:id="start-range" size="5" />
                 </label>
-            </div>
-            <div>
+            </span>
+            <span>
                 <label>
                     <wicket:message key="attendance.settings.grading.until.label"/> <br />
                     <input type="text" wicket:id="end-range" size="5" />
                 </label>
-            </div>
-            <div>
+            </span>
+            <span>
                 <label>
                     <wicket:message key="attendance.settings.grading.points.label"/> <br />
                     <input type="text" wicket:id="points" size="5" />
                 </label>
-            </div>
-            <div>
+            </span>
+            <span>
                 <input type="submit" wicket:id="add-rule-submit" wicket:message="value:attendance.settings.grading.add.rule"/>
-            </div>
+            </span>
         </form>
     </div>
     <div wicket:id="rules-list"></div>

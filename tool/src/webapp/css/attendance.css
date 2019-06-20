@@ -53,14 +53,13 @@ h1.tightHeader, h2.tightHeader, h3.tightHeader, h4.tightHeader, h5.tightHeader, 
     margin-bottom: 0;
 }
 
-span.overHeaderSpan, span.itemsHeaderSpan, span.settingsHeaderSpan, span.gradingHeaderSpan {
+span.itemsHeaderSpan, span.settingsHeaderSpan, span.gradingHeaderSpan {
     margin: 0 .5em;
 }
 
 p.overviewInstructions, p.addEditInstructions {
     font-size: 1.2em;
     line-height: 1.5em;
-    margin-left: 35px;
 }
 
 p.addEditInstructions {
@@ -127,27 +126,27 @@ img.refreshImage {
     height: 1.4em;
 }
 
-table.overviewTable, table.itemListTable, table.eventViewTable, table.takeAttendanceTable {
+table.itemListTable, table.eventViewTable, table.takeAttendanceTable {
     border: 2px solid #ccc;
     border-collapse: collapse;
     padding: .5em;
     margin-left: 35px;
 }
 
-table.overviewTable thead tr .header, table.itemListTable thead tr .header, table.takeAttendanceTable thead tr .header  {
+thead tr .header, table.itemListTable thead tr .header, table.takeAttendanceTable thead tr .header  {
     background: url(../images/bg.gif) no-repeat bottom .5em right;
     cursor: pointer;
     padding-right: 24px;
 }
 
-table.overviewTable thead tr .headerSortUp, table.itemListTable thead tr .headerSortUp, table.takeAttendanceTable thead tr .headerSortUp {
+thead tr .headerSortUp, table.itemListTable thead tr .headerSortUp, table.takeAttendanceTable thead tr .headerSortUp {
     background-image: url(../images/asc.gif);
 }
-table.overviewTable thead tr .headerSortDown, table.itemListTable thead tr .headerSortDown, table.takeAttendanceTable thead tr .headerSortDown {
+thead tr .headerSortDown, table.itemListTable thead tr .headerSortDown, table.takeAttendanceTable thead tr .headerSortDown {
     background-image: url(../images/desc.gif);
 }
 
-table.itemListTable, table.eventViewTable, table.takeAttendanceTable, div.eventFormContainer, form.addEditForm, .addComment h3, form.takeAttendanceNowForm, td.overviewGradeCol form {
+table.itemListTable, table.eventViewTable, table.takeAttendanceTable, div.eventFormContainer, form.addEditForm, .addComment h3, td.overviewGradeCol form {
     margin: 0;
 }
 
@@ -174,17 +173,17 @@ table.itemListTable, table.eventViewTable, table.takeAttendanceTable, div.eventF
     max-height: 140px;
 }
 
-.overviewTable th, .itemListTable th, .eventViewTable th, .takeAttendanceTable th {
+.itemListTable th, .eventViewTable th, .takeAttendanceTable th {
     text-align: center;
     border-bottom-width: 2px;
     font-size: 1.2em;
 }
 
-.overviewTable thead tr, .itemListTable thead tr, .eventViewTable thead tr, .takeAttendanceTable thead tr, .div-table-row-header  {
+.itemListTable thead tr, .eventViewTable thead tr, .takeAttendanceTable thead tr, .div-table-row-header  {
     background-color: #eee;
 }
 
-.overviewTable tbody tr:hover, .itemListTable tbody tr:hover, .eventViewTable tbody tr:hover, .takeAttendanceTable tbody tr:hover, .div-table-row:hover {
+.itemListTable tbody tr:hover, .eventViewTable tbody tr:hover, .takeAttendanceTable tbody tr:hover, .div-table-row:hover {
     background-color: #deeeff;
 }
 
@@ -356,12 +355,9 @@ h3.activeStatusHeader, h3.commentHeader, h3.containerHeading {
     font-weight: normal;
 }
 
-span.addEditReq {
+label.addEditReq {
     color: red;
     font-size: 1.2em;
-    float: left;
-    margin-left: -.5em;
-    margin-right: -.5em;
 }
 
 td.noEventsCol, td.noStudentsCol {
@@ -407,7 +403,6 @@ div.attendanceBreadcrumbs span {
     background-color:#fff;
     border:1px solid  #ccc;
     font-size: 1.2em;
-    margin-left: 35px;
 }
 
 .div-table-row2 {
@@ -434,8 +429,6 @@ p.setAll {
 
 .addComment {
     position:absolute;
-    top:-130px;
-    left:-200px;
     background-color:#fff;
     border: 1px solid #555;
     width:200px;
@@ -495,6 +488,13 @@ div.printMask {
 
 div.printMask:hover, .printImage:hover, .commentToggle:hover, .div-table-col input:hover {
     cursor: pointer;
+    margin-right: .5em;
+    margin-left: 2em;
+}
+
+.commentToggle {
+    margin-right: .5em;
+    margin-left: 2em;
 }
 
 span.cancelPrint, span.cancelAddComment {
@@ -563,10 +563,6 @@ p.editStatusInfo, p.editGradeInfo, p.editCommentInfo {
     margin: 0;
 }
 
-form.studentOverviewFilterForm {
-    margin-left: 35px;
-}
-
 th.overviewGradeCol img.settings {
     vertical-align: text-bottom;
 }
@@ -584,6 +580,25 @@ ul.gradeSettings li {
 label.gradeSettingsLabel {
     font-size: 1.2em;
     line-height: 1.7em;
+}
+
+div.addItemLine {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+label.addItemCaptions {
+    position: relative;
+    top: 21%;
+}
+
+#buttonSection > button.saveNewItem {
+    background: #15597e;
+    color: white;
+}
+
+ul.actions-dropdown {
+    z-index: 90;
 }
 
 span.gradingType > div div label {
@@ -633,28 +648,65 @@ form.gradeSettingsForm {
     display: block;
 }
 
-.status-group-container {
-    float: left;
+span.status-group-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.table > thead > tr > th.status-names-area {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+
+span.statusRadioCell {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+label.statusClickBox {
+    cursor: pointer;
+    z-index: 90;
+    height: 100%;
+    width: 100%;
+    font-size: 22px;
+    opacity: 0.2;
+}
+label.statusClickBox:hover, span.UNEXCUSED_ABSENCE > label.statusClickBox, span.EXCUSED_ABSENCE > label.statusClickBox, span.PRESENT > label.statusClickBox, span.LEFT_EARLY > label.statusClickBox, span.LATE > label.statusClickBox {
+    opacity: 1;
+}
+
+label.status-label-centered {
+    text-align: center;
 }
 
 .PRESENT {
     background-color: #DFF0D8;
     border: 1px solid green;
+    opacity: 1;
 }
 
 .UNEXCUSED_ABSENCE {
     background-color: #FFBBBB;
     border: 1px solid red;
+    opacity: 1;
 }
 
 .EXCUSED_ABSENCE {
     background-color: #CCCCCC;
     border: 1px solid gray;
+    opacity: 1;
 }
 
 .LATE, .LEFT_EARLY {
     background-color: #fcf8a5;
     border: 1px solid goldenrod;
+    opacity: 1;
 }
 
 div.noRecord {
@@ -685,7 +737,7 @@ div.statsPanelSlow {
     .div-table-col {
         float:left;/*fix for  buggy browsers*/
         display:table-cell;
-        width:97px;
+        width:100%;
         text-align: center;
         padding-left: .5em;
         padding-right: .5em;
@@ -755,10 +807,6 @@ div a.delete:hover {
     color: red;
 }
 
-.addAttendanceItemForm {
-    margin-left: 35px;
-}
-
 /* Janked from gradebook-grades.css. Credit goes to steveswinsburg & payten */
 div.wicket-modal div.w_content_3 {
     border: none; /** don't want border wrapping content inside the modal **/
@@ -785,11 +833,13 @@ div.wicket-modal div.w_content_3 div.messageSuccess, div.wicket-modal div.w_cont
 }
 
 form.takeAttendanceNowForm input {
-    background-color: green;
+    background: #15597e;
+    color: white;
 }
 
 form.takeAttendanceNowForm input:hover {
-    background: linear-gradient(green, darkgreen);
+    background: #15597e;
+    color: white;
 }
 
 span.yui-skin-sam img {
